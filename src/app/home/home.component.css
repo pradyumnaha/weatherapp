@@ -1,0 +1,35 @@
+.vertical-center {
+     min-height: 90%;  /* Fallback for browsers do NOT support vh unit */
+     min-height: 90vh; /* These two lines are counted as one 🙂       */
+     display: flex;
+     align-items: center;
+     background-color: lightgrey;
+ }
+ 
+ input.ng-invalid.ng-touched{
+     border: 1px solid red;
+ }
+ 
+ .cityValidationMsg, .cntryCdValidationMsg, .commonValidationMsg {
+    color: red;
+    display: inline-block;
+}
+
+ .weather-card {
+     border: none;
+     border-radius: 5px !important;
+     box-shadow: 1px 1px 6px 3px #adadad;
+ }
+ 
+ .weather-card .card-header {
+     background-color: #343a40;
+     color: white;
+     font-size: 26px;
+     padding: 10px;
+     text-align: center;
+ }
+   
+ .weather-card .form-control {
+     font-size: 14px;
+ }
+ 
