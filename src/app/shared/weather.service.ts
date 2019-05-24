@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-//import 'rxjs/add/operator/map';
-
 
 @Injectable()
 export class WeatherService {
@@ -15,11 +12,6 @@ export class WeatherService {
 
    getWeatherDetails(cityName, countryCd){
     return this.httpclient.get(`${this.url}${cityName},${countryCd}&APPID=${this.apiKey}`);
-    // .pipe(
-    // map((resp: Response)=>{
-    //   const data = resp.json;
-    //   return data;
-    // }));
    }
    
 }

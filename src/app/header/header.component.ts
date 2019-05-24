@@ -7,11 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  displayHomeButton: boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit() {
-    document.getElementById("homeBtn").style.display = 'none';
+    if(this.router.url != "/"){
+      this.displayHomeButton = true;
+    }
   }
 
   onClickHome(){

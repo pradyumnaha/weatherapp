@@ -5,10 +5,7 @@
         <div class="col-offset-4 col-sm-5">
           <h4>{{this.responsedata.city.name}}, {{this.responsedata.city.country}}</h4>
           <div *ngIf="!errorhttp">  
-            <span>{{this.responsedata.list[0].weather[0].description[0].toUpperCase() + this.responsedata.list[0].weather[0].description.slice(1)}} </span>
-            <!-- <span>{{this.degCelcius}} &#8451;</span> -->
-            <!-- <h5>Temperature MIN: {{this.responsedata.list[0].main.temp_min}}</h5>
-            <h5>Temperature MAX: {{this.responsedata.list[0].main.temp_max}}</h5> -->
+            <span>{{this.getWeatherDescription()}}</span>
           </div>
           <div class="mb-4">
               <i class="fas fa-cloud fa-2x" *ngIf="cloudy"></i>
@@ -27,24 +24,17 @@
       </div>
       <div class="row justify-content-md-center">
         <div class="col-sm-8">
-            <div class="btn-group float-right" role="group" aria-label="Basic example" (click)="onButtonGroupClick($event)" >
-                <button type="button" class="btn btn-secondary active btn-sm" (click) = "onWindClick()">Wind</button>
-                <button type="button" class="btn btn-secondary btn-sm" (click) = "onTempClick()">Temperature</button>
-            </div>
-            <!-- <div class="btn-group float-right" data-toggle="buttons">
-              <label class="btn btn-secondary btn-sm">
-                <input type="radio" name="options" id="option1" checked="checked" (change) = "onWindClick()"> Wind
-              </label>
-              <label class="btn btn-secondary btn-sm">
-                <input type="radio" name="options" id="option2" (change) = "onTempClick()"> Temperature
-              </label>
-            </div> -->
-            <canvas id="windBarChart" ></canvas>
-          <canvas id="weatherLineChart" ></canvas>
+          <div class="btn-group float-right" role="group" aria-label="Basic example" (click)="onButtonGroupClick($event)" >
+              <button type="button" class="btn btn-secondary active btn-sm btnWind" (click) = "onWindClick()">Wind</button>
+              <button type="button" class="btn btn-secondary btn-sm btnTemp" (click) = "onTempClick()">Temperature</button>
+          </div>
+          <div [hidden]="hideWindChart">
+            <canvas class="windChart" id="windBarChart" ></canvas>
+          </div>
+          <div [hidden]="hideTempChart">
+            <canvas class="tempChart" id="weatherLineChart" ></canvas>
+          </div>          
         </div>
-        <!-- <div class="col-sm-6">
-          <canvas id="windBarChart" ></canvas>
-        </div> -->
       </div>
     </div>
 </div>

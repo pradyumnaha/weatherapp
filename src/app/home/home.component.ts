@@ -28,8 +28,10 @@ export class HomeComponent implements OnInit {
       this.validFail= true;
       return;
     }
+        
     this.dataService.sendCityCntryCd(`${this.enteredCityName},${this.enteredCountryCode}`);
-    this.router.navigate(['/weather-details']);      
+    this.router.navigate(['/weather-details']);
+    
   }
 
 }

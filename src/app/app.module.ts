@@ -21,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'weather-details',
     component: WeatherDetailsComponent     
+  },
+  {
+    path: '**',
+    redirectTo: '/'     
   }
 ]
 

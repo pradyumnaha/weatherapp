@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark">
-  <div class="container">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#"><i class="fas fa-cloud-sun fa-lg" id="weatherIcon"></i>Weather App</a>
-    <button type="button" class="btn btn-light" id="homeBtn" (click) = "onClickHome()"><i class="fas fa-arrow-left"></i> Home</button>
+    <button type="button" class="btn btn-light btn-sm btnHome" id="homeBtn" (click) = "onClickHome()" *ngIf="displayHomeButton"><i class="fas fa-arrow-left"></i> Home</button>
   </div>
 </nav>
