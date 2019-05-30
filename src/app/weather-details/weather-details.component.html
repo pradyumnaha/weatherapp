@@ -3,9 +3,9 @@
   <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-offset-4 col-sm-5">
-          <h4>{{this.responsedata.city.name}}, {{this.responsedata.city.country}}</h4>
+          <h4>{{this.responsedata?.city?.name}}, {{this.responsedata?.city?.country}}</h4>
           <div *ngIf="!errorhttp">  
-            <span>{{this.getWeatherDescription()}}</span>
+            <span>{{this.list[0]?.weather[0]?.description.toUpperCase()}}</span>
           </div>
           <div class="mb-4">
               <i class="fas fa-cloud fa-2x" *ngIf="cloudy"></i>
@@ -17,9 +17,9 @@
           <h4 *ngIf="errorhttp">Oops!!! Invalid URL</h4>
         </div>
         <div class="col-sm-3">
-          <p><b>Humidity:</b> {{this.responsedata.list[0].main.humidity}}%</p>
-          <p><b>Sea Level:</b> {{this.responsedata.list[0].main.sea_level}}hPA</p>
-          <p><b>Ground Level:</b> {{this.responsedata.list[0].main.grnd_level}}hPA</p>
+          <p><b>Humidity:</b> {{this.responsedata?.list[0]?.main?.humidity}}%</p>
+          <p><b>Sea Level:</b> {{this.responsedata?.list[0]?.main?.sea_level}}hPA</p>
+          <p><b>Ground Level:</b> {{this.responsedata?.list[0]?.main?.grnd_level}}hPA</p>
         </div>
       </div>
       <div class="row justify-content-md-center">

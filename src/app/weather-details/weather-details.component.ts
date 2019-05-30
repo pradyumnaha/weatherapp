@@ -76,9 +76,9 @@ export class WeatherDetailsComponent implements OnInit {
 
   }
 
-  getWeatherDescription(){
-    return (this.list[0].weather[0].description.toUpperCase());
-  }
+  // getWeatherDescription(){
+  //   return (this.list[0].weather[0].description.toUpperCase());
+  // }
 
   onTempClick(){
     this.hideTempChart = false;
